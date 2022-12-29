@@ -28,6 +28,7 @@
             const baseURL = 'https://api.hgbrasil.com/weather';
             const city = document.getElementById("city").value;
             fetch(baseURL+'?key='+apiKey+'&city_name='+city,{
+                mode: 'no-cors',
                 headers: {
                     'Access-Control-Allow-Origin': 'tools.salazar.dev.br'
                 }
