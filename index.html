@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Previsão do Tempo</title>
+</head>
+<body>
+    <input type="text" id="city" placeholder="cidade">
+    <button id="search" onclick="searchWeather()">Buscar</button>
+    <script>
+        const searchWeather = () => {
+            const apiKey = 'de0e25f1757a09d2f7f34b4ffd91045c';
+            const baseURL = 'https://api.openweathermap.org/data/2.5/weather';
+            const city = document.getElementById("city").value;
+            const lang = 'pt_br';
+            const unit = 'metric'
+            fetch(baseURL+'?q='+city+'&appid='+apiKey+'&lang='+lang+'&units='+unit)
+            .then(response => response.json())
+            .then(data => {
+                console.log(data);
+            });
+        }
+    </script>
+</body>
+</html>
