@@ -24,10 +24,14 @@
         }
 
         const searchHG = () => {
-            const apiKey = '2ab578ed';
+            const apiKey = '582c067a';
             const baseURL = 'https://api.hgbrasil.com/weather';
             const city = document.getElementById("city").value;
-            fetch(baseURL+'?key='+apiKey+'&city_name='+city)
+            fetch(baseURL+'?key='+apiKey+'&city_name='+city,{
+                headers: {
+                    'Access-Control-Allow-Origin': 'tools.salazar.dev.br'
+                }
+            })
             .then(response => response.json())
             .then(data => {
                 console.log(data);
